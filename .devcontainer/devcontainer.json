@@ -1,0 +1,13 @@
+{
+  "name": "Java",
+  "image": "ghcr.io/graalvm/jdk-community:21",
+  "forwardPorts": [
+    8080
+  ],
+  "postCreateCommand": "java -version",
+  "customizations": {
+    "jetbrains": {
+      "backend": "IntelliJ"
+    }
+  }
+}
