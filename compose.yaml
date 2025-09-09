@@ -5,11 +5,11 @@ services:
     image: docker.io/grafana/otel-lgtm:latest
     ports:
       - "3000:3000"   # Grafana
-      - "3100:3100"   # Loki
-      - "3200:3200"   # Tempo
-      - "9009:9009"   # Mimir
-      - "9090:9090"   # Mimir UI
-      - "9095:9095"   # Tempo gRPC
+      #- "3100:3100"   # Loki
+      #- "3200:3200"   # Tempo
+      #- "9009:9009"   # Mimir
+      #- "9090:9090"   # Mimir UI
+      #- "9095:9095"   # Tempo gRPC
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
       - GF_USERS_ALLOW_SIGN_UP=false
@@ -20,7 +20,7 @@ services:
     command:
       - run
       - /etc/alloy/config.alloy
-      - --server.http.listen-addr=0.0.0.0:12345
+      #- --server.http.listen-addr=0.0.0.0:12345
     ports:
       - "12345:12345"  # Alloy UI
     volumes:
@@ -33,3 +33,4 @@ services:
 
 networks:
     lgtm:
+       driver: bridge
