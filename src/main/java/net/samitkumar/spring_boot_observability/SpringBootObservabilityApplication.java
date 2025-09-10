@@ -14,6 +14,7 @@ import java.util.Map;
 public class SpringBootObservabilityApplication {
 
 	public static void main(String[] args) {
+        System.setProperty("reactor.netty.http.server.accessLogEnabled", "true");
 		SpringApplication.run(SpringBootObservabilityApplication.class, args);
 	}
 
